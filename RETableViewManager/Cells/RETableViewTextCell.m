@@ -92,6 +92,11 @@
     self.textField.clearButtonMode = self.item.clearButtonMode;
     self.textField.clearsOnBeginEditing = self.item.clearsOnBeginEditing;
     
+    //has our fixes
+    self.textLabel.font = [UIFont systemFontOfSize:14];
+    self.textLabel.textAlignment = NSTextAlignmentLeft;
+    self.textField.textAlignment = NSTextAlignmentRight;
+    
     self.actionBar.barStyle = self.item.keyboardAppearance == UIKeyboardAppearanceAlert ? UIBarStyleBlack : UIBarStyleDefault;
     
     self.enabled = self.item.enabled;
