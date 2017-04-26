@@ -55,10 +55,13 @@
     
     self.valueLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     self.valueLabel.font = [UIFont systemFontOfSize:17];
+    self.valueLabel.adjustsFontSizeToFitWidth = YES;
+    self.valueLabel.minimumScaleFactor = 0.9;
     self.valueLabel.backgroundColor = [UIColor clearColor];
     self.valueLabel.textColor = self.detailTextLabel.textColor;
     self.valueLabel.highlightedTextColor = [UIColor whiteColor];
     self.valueLabel.textAlignment = NSTextAlignmentRight;
+    self.valueLabel.lineBreakMode = NSLineBreakByTruncatingMiddle;
     [self.contentView addSubview:self.valueLabel];
 }
 
@@ -81,7 +84,8 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    [self layoutDetailView:self.valueLabel minimumWidth:[self.valueLabel.text re_sizeWithFont:self.valueLabel.font].width];
+    //[self layoutDetailView:self.valueLabel minimumWidth:[self.valueLabel.text re_sizeWithFont:self.valueLabel.font].width];
+    [self layoutDetailView:self.valueLabel minimumWidth:0];
     CGRect frame = self.valueLabel.frame;
     frame.size.width += 10.0;
     self.valueLabel.frame = frame;
