@@ -103,6 +103,7 @@
     } else {
         RETableViewItem *item = (RETableViewItem *)self.item;
         self.textLabel.text = item.title;
+        self.textLabel.textColor = item.textColor;
         self.textLabel.backgroundColor = [UIColor clearColor];
         self.accessoryType = item.accessoryType;
         self.accessoryView = item.accessoryView;
